@@ -10,119 +10,143 @@
 <!--Naming options in this format:
 q1o1, q2o2 etc. Format means 'Question 1 Option 1' for q1o1.-->
 
-    <form>
+<form>
 
-        <!--Header-->
-        <header>
+    <!--Header-->
+    <header>
 
-            <!--Top Form-->
-            <p>
-                Received on <input type="date" placeholder="Date"> at <input type="time" placeholder="Time">.
-            </p>
+        <!--Top Form-->
+        <p>
+            Received on <input type="date" placeholder="Date"> at <input type="time" placeholder="Time">.
+        </p>
 
-            <!--Info Heading-->
-            <img src="images/trlogo.jpg" alt="Texas Associations of Realtors Logo">
-            <h2> Texas Association of Realtors </h2>
-            <h1> Residential Lease Application </h1>
-            <p> USE OF THIS FORM BY PERSONS WHO ARE NOT MEMBERS OF THE TEXAS ASSOCIATION OF REALTORS
-                &reg; IS NOT AUTHORIZED</p>
-            <footer> &copy; Texas Association of Realtors &reg;, Inc.</footer>
-            <p><strong><em>Each occupant and co-applicant 18 years of older must submit
+        <!--Info Heading-->
+        <img src="images/trlogo.jpg" alt="Texas Associations of Realtors Logo">
+        <h2> Texas Association of Realtors </h2>
+        <h1> Residential Lease Application </h1>
+        <p> USE OF THIS FORM BY PERSONS WHO ARE NOT MEMBERS OF THE TEXAS ASSOCIATION OF REALTORS
+            &reg; IS NOT AUTHORIZED</p>
+        <footer> &copy; Texas Association of Realtors &reg;, Inc.</footer>
+        <p><strong><em>Each occupant and co-applicant 18 years of older must submit
             a seperate application</em></strong></p>
 
 
-        </header> <!--End of Header-->
+    </header> <!--End of Header-->
 
-        <hr>
+    <hr>
 
-        <!--Main Content-->
-        <article>
+    <!--Main Content-->
+    <article>
 
-                <input type="text" placeholder="Property Address" style="width: 500px;">
+        <input type="text" placeholder="Property Address" style="width: 500px;">
 
-                <p>
-                    <label for="a_m_i_d">Anticipated Move-In Date</label>
-                    <input type="date" id="a_m_i_d">
+        <p>
+            <label for="a_m_i_d">Anticipated Move-In Date</label>
+            <input type="date" id="a_m_i_d">
 
-                    <label for="monthly_rent"> Monthly Rent: $</label>
-                    <input type="number" id="monthly_rent">
+            <label for="monthly_rent"> Monthly Rent: $</label>
+            <input type="number" id="monthly_rent">
 
-                    <label for="security_dep"> Security Deposit: $</label>
-                    <input type="number" id="security_dep">
-                </p>
+            <label for="security_dep"> Security Deposit: $</label>
+            <input type="number" id="security_dep">
+        </p>
 
-                <!--How Refferred-->
-                <p>
-                    <label for="refer">Applicant was referred to Landlord by:</label>
-                    <div id="refer">
+        <!--How Refferred-->
+        <p>
+            <label for="refer">Applicant was referred to Landlord by:</label>
+        <div id="refer">
 
-                        <label for="q1o1"> Real Estate Agent</label>
-                        <input type="radio" name="q1" id="q1o1">
-                        <input type="text" name="RE_Name" placeholder="Name">
-                        <input type="tel" name="RE_Phone" placeholder="phone">
+            <label for="q1o1"> Real Estate Agent</label>
+            <input type="radio" name="q1" id="q1o1">
+            <input type="text" name="RE_Name" placeholder="Name">
+            <input type="tel" name="RE_Phone" placeholder="phone">
 
-                        <label for="q1o2"> Newspaper </label>
-                        <input type="radio" name="q1" id="q1o2">
+            <label for="q1o2"> Newspaper </label>
+            <input type="radio" name="q1" id="q1o2">
 
-                        <label for="q1o3"> Sign </label>
-                        <input type="radio" name="q1" id="q1o3">
+            <label for="q1o3"> Sign </label>
+            <input type="radio" name="q1" id="q1o3">
 
-                        <label for="q1o4"> Internet </label>
-                        <input type="radio" name="q1" id="q1o4">
+            <label for="q1o4"> Internet </label>
+            <input type="radio" name="q1" id="q1o4">
 
-                        <label for="q1o5"> Other </label>
-                        <input type="radio" name="q1" id="q1o5">
-                        <input type="text" name="other">
+            <label for="q1o5"> Other </label>
+            <input type="radio" name="q1" id="q1o5">
+            <input type="text" name="other">
 
-                    </div>
-                </p> <!--end of referred-->
+        </div>
+        </p> <!--end of referred-->
 
-                <!--Applicant Information-->
-                <p>
+        <!--Applicant Information-->
+        <p>
 
-                    <label for="applicant_name">Applicant Name (first, middle, last) </label>
-                    <input type="text" name="applicant_name" id="applicant_name">
+            <label for="applicant_name">Applicant Name (first, middle, last) </label>
+            <input type="text" name="applicant_name" id="applicant_name">
 
-                    <br>
+            <br>
 
-                    Is there a co-applicant?
-                    <label for="q2o1"> Yes </label>
-                    <input type="radio" name="q2" id="q2o1">
-                    <label for="q2o2"> No </label>
-                    <input type="radio" name="q2" id="q2o2">
-                    <strong> If yes, co-applicant must submit a seperate application </strong>
+            Is there a co-applicant?
+            <label for="q2o1"> Yes </label>
+            <input type="radio" name="q2" id="q2o1">
+            <label for="q2o2"> No </label>
+            <input type="radio" name="q2" id="q2o2">
+            <strong> If yes, co-applicant must submit a seperate application </strong>
 
-                    <br>
+            <br>
 
-                    <label for="fln">Applicant's former last name (maiden or married)</label>
-                    <input type="text" name="formerlastname" id="fln">
+            <label for="fln">Applicant's former last name (maiden or married)</label>
+            <input type="text" name="formerlastname" id="fln">
 
-                    <br>
-
-                    <label for="applicant_email"> E-mail </label>
-                    <input type="text" name="applicant_email" id="applicant_email">
-                    <label for="home_phone"> Home Phone</label>
-                    <input type="tel" name="home_phone" id="home_phone">
+            <br>
 
 
+            <!--Contact Information-->
+            <label for="applicant_email"> E-mail </label>
+            <input type="text" name="applicant_email" id="applicant_email">
+            <label for="home_phone"> Home Phone</label>
+            <input type="tel" name="home_phone" id="home_phone">
+            <label for="work_phone"> Work Phone</label>
+            <input type="tel" name="work_phone" id="work_phone">
+            <label for="mobile.pager"> Mobile/Pager </label>
+            <input type="tel" name="mobile.pager" id="mobile.pager">
 
 
+            <!--More Info-->
+            <label for="social_security"> Soc. Sec. No. </label>
+            <input type="number" name="social_security" id="social_security">
+            <br>
+            <label for="driver">Driver License No.</label>
+            <input type="number" name="driver_no" id="driver">
+            in
+            <input type="text" name="driver_state" placeholder="state">
+            <label for="dob"> Date of Birth </label>
+            <input type="date" name="dob" id="dob">
+            <label for="height">Height</label>
+            <input type="text" name="height" id="height">
+            <label for="weight">Weight</label>
+            <input type="text" name="weight" id="weight">
+            <label for="eye_color">Eye Color</label>
+            <input type="text" name="eye_color" id="eye_color">
+            <label for="hair_color">Hair Color</label>
+            <input type="text" name="hair_color" id="hair_color">
+            <label for="martial_status"> Martial Status</label>
+            <select name="martial_status" id="martial_status">
+                <option> Single </option>
+                <option> Married </option>
+                <option> Divorced </option>
+            </select>
+            <label for="citizen"> Citizenship </label>
+            <input type="text" name="citizen_of" id="citizen" placeholder="country">
+
+            <!--Emergency Contact-->
+
+        </p> <!--end of Applicant Information-->
 
 
-                </p>
+    </article>
 
 
-
-
-
-
-
-
-        </article>
-
-
-
-    </form>
+</form>
 
 </body>
 
