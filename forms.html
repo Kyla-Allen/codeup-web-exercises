@@ -27,12 +27,21 @@
 
         <div>
 
-            <h3> How did you hear about us?</h3>
+            <div id="howyouheard">
+                <input type="radio" name="hearsay" value="billboard">
+                <input type="radio" name="hearsay" value="radio advertisement">
+                <input type="radio" name="hearsay" value="internet advertisement">
+                <input type="radio" name="hearsay" value="other">
+            </div>
+        </div>
 
-            <input type="radio" name="hearsay" value="billboard">
-            <input type="radio" name="hearsay" value="radio advertisement">
-            <input type="radio" name="hearsay" value="internet advertisement">
-            <input type="radio" name="hearsay" value="other">
+        <div>
+           <label for="browser"> What Browser Are You Using?</label>
+            <select id="browser" name="browser">
+                <option value="chrome"> Chrome </option>
+                <option value="firefox"> FireFox </option>
+                <option value="safari"> Safari </option>
+            </select>
         </div>
 
     </form>
