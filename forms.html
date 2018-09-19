@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 
+<html lang="eng">
+
 <head>
+
     <title>Register with Us</title>
 </head>
 
@@ -8,16 +11,21 @@
 
     <form method="POST" action="http://http-inspector.glitch.me/">
 
-        <label for="email"> Email </label>
-        <input type="email" id= "email" name="email" placeholder="blah@blah.com">
+        <!--Email and Password-->
+        <div>
+            <label for="email"> Email </label>
+            <input type="email" id= "email" name="email" placeholder="blah@blah.com">
+
+            <br>
+
+            <label for="password">Password</label>
+            <input type="password" id= "password" name="password" placeholder="password1">
+
+        </div>
 
         <br>
 
-        <label for="password">Password</label>
-        <input type="password" id= "password" name="password" placeholder="password1">
-
-        <br>
-
+        <!--Bio-->
         <label for="bio"> About </label>
         <br>
         <textarea id="bio" name="bio"></textarea>
@@ -25,16 +33,20 @@
         <br>
 
 
+        <!---Questioning how you hear-->
         <div>
-
-            <div id="howyouheard">
-                <input type="radio" name="hearsay" value="billboard">
-                <input type="radio" name="hearsay" value="radio advertisement">
-                <input type="radio" name="hearsay" value="internet advertisement">
-                <input type="radio" name="hearsay" value="other">
-            </div>
+            <label for="howyouheard"> How did you hear about us?</label>
+            <p id="howyouheard">
+                Billboard <input type="radio" name="hearsay" value="billboard">
+                Radio Advertisement<input type="radio" name="hearsay" value="radio_advertisement">
+                Internet Advertisement<input type="radio" name="hearsay" value="internet_advertisement">
+                Other <input type="radio" name="hearsay" value="other">
+            </p>
         </div>
 
+        <br>
+
+        <!--Questioning Browser-->
         <div>
            <label for="browser"> What Browser Are You Using?</label>
             <select id="browser" name="browser">
@@ -43,6 +55,9 @@
                 <option value="safari"> Safari </option>
             </select>
         </div>
+
+        <!--Submit Button-->
+        <button type="submit"> Submit </button>
 
     </form>
 
