@@ -80,9 +80,17 @@ q1o1, q2o2 etc. Format means 'Question 1 Option 1' for q1o1.-->
                 <!--Applicant Information-->
                 <p>
 
-                    <input type="text" name="applicant_name"
+                    <label for="applicant_name">Applicant Name (first, middle, last) </label>
+                    <input type="text" name="applicant_name" id="applicant_name">
 
+                    <br>
 
+                    Is there a co-applicant?
+                    <label for="q2o1"> Yes </label>
+                    <input type="radio" name="q2" id="q2o1">
+                    <label for="q2o2"> No </label>
+                    <input type="radio" name="q2" id="q2o2">
+                    <strong> If yes, co-applicant must submit a seperate application </strong>
 
 
 
