@@ -23,7 +23,8 @@ body, html {
     margin: 10px;
     border-style: solid;
     border-radius: 25px;
-    border: 2px;
+    border-width: 2px;
+    border-color: lightgray;
     padding: 10px;
 }
 
