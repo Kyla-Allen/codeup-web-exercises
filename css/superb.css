@@ -1,0 +1,32 @@
+
+
+/*General Parts*/
+body{
+    background: #B1FFC1;
+}
+
+header, footer {
+    text-align: center;
+    font-family: "Marker Felt";
+    color: #A05C7B;
+}
+
+
+/*elements*/
+h2{
+    color: #192F1D;
+}
+
+dt {
+    font-weight: bold;
+}
+
+th, td {
+    border-bottom: 1px solid #564787;
+
+}
+
+/* really specific stuff */
+#primarina {
+    width: 120px;
+}

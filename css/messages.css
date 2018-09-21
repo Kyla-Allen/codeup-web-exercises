@@ -1,0 +1,52 @@
+/*variables*/
+ :root {
+    --info-color: blue;
+    --info-bg: lightskyblue;
+     --success-color: green;
+     --success-bg:lightgreen;
+     --warning-color: yellowgreen;
+     --warning-bg: lightgoldenrodyellow;
+     --error-color: red;
+     --error-bg: pink;
+}
+
+
+body, html {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Ubuntu, sans-serif;
+}
+
+.message {
+    margin: 10px;
+    border-style: solid;
+    border-radius: 25px;
+    border: 2px;
+    padding: 10px;
+}
+
+.message-info
+{
+    color: var(--info-color);
+    background-color: var(--info-bg);
+}
+
+.message-success
+{
+    color: var(--success-color);
+    background-color: var(--success-bg);
+}
+
+.message-warning
+{
+    color: var(--warning-color);
+    background-color: var(--warning-bg);
+}
+
+.message-error
+{
+    color: var(--error-color);
+    background-color: var(--error-bg);
+}
