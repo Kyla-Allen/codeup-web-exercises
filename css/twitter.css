@@ -76,7 +76,7 @@ a {
 }
 
 .nav-item{
-    display:inline;
+    display:inline-block;
 }
 
 .profile {
@@ -103,11 +103,11 @@ a {
 
 .profile-items {
     list-style: none;
-    padding: 0;
+    padding: 0%;
 }
 
 .profile-entry{
-    margin: .5em;
+    margin: 0.5em;
 }
 
 .btn {
