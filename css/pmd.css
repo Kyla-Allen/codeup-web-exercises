@@ -1,4 +1,13 @@
 /* General */
+nav {
+    color: black;
+    background-color: lightgoldenrodyellow;
+    font-family: "Marker Felt";
+    padding: 5px;
+    position: fixed;
+    border: darkgray 1px solid;
+}
+
 
 /* Elements */
 h1{
@@ -11,7 +20,18 @@ h1{
     border-color: #0fb784;
 }
 
+a:hover{
+    font-size: larger;
+}
+
 /* Specific */
+
+.nav_items{
+    list-style: none;
+    display: inline;
+    font-size: large;
+    margin: 2px;
+}
 
 .PMD_badge {
     margin-left: auto; margin-right: auto;
@@ -22,7 +42,8 @@ h1{
 }
 
 .PMD_badge:hover {
-    opacity: 20%;
+    opacity: 0.2;
 
 }
+
 

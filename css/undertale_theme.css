@@ -1,0 +1,55 @@
+/* Extra Stuff */
+@font-face {
+    font-family: undertale;
+    src: url("../fonts/DeterminationMonoWeb.woff");
+}
+
+/* General */
+body{
+    background-color: black;
+}
+
+header {
+    text-align: center;
+    background-color: black;
+    border: solid 2px white;
+    padding:5px;
+}
+
+nav {
+    position: fixed;
+    width: 100%;
+    margin: 5px 20px 5px 20px;
+
+
+}
+
+/* Elements */
+h1{
+    font-family: undertale;
+    color: yellow;
+
+}
+
+/* Specific */
+.desc {
+    font-family: undertale;
+    color:white;
+}
+
+.nav-items li {
+    display: inline;
+    padding: 5px 10px 5px 10px;
+    background-color: black;
+    border: solid 2px orange;
+    text-decoration: none;
+    width: calc(100% - 10%);
+}
+
+li a {
+    color: orangered;
+}
+
+li a:hover {
+    color: yellow;
+}
