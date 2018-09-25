@@ -1,0 +1,56 @@
+
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*Grid*/
+
+    /*container*/
+    .container{
+        margin: 0 auto;
+        width: 80%;
+        max-width: 1200px;
+    }
+
+    /*rows*/
+    .row {
+        width: 100%;
+    }
+
+    .row:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    /*columns*/
+    .column{
+        box-sizing: border-box;
+        float: left;
+        padding: 0;
+        background-color: lavender;
+        border: 1px solid black;
+    }
+    .column.one-half{
+        width:50%;
+    }
+    .column.one-third{
+        width: 33.33%;
+    }
+    .column.one-fourth{
+        width:25%;
+    }
+    .column.one-sixth{
+        width: calc(100% / 6);
+    }
+    .column.one-eigth{
+        width: 12.5%;
+    }
+
+    /*for smaller screens*/
+@media screen and (max-width:768px) {
+    .column.one-half, .column.one-third, .column.one-fourth,
+    .column.one-sixth, .column.one-eigth {
+        width: 100%
+    }
+
+}
+/*~~~~~~~~~~~~~~~~~~~~~~~~*/
