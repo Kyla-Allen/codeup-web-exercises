@@ -35,11 +35,6 @@
          list-style: none;
      }
 
-
-    .header-img{
-        position: relative;
-        left: 5%
-    }
     .sub-section {
         font-style: italic;
         margin: 10% 0 5% 0;
@@ -56,20 +51,16 @@
 @media screen and (min-width:934px) {
 
 
-    footer{
-        clear: both;
-        margin: 0 5% 0 5%;
-    }
-
     h1 {
         float: left;
         margin: 2% 5% 0 5%;
 
     }
     li {
+        all: unset;
         padding: 1em;
         display: inline;
-        background-color: white;
+        font-size: larger;
     }
     .nav-links {
         float: right;
@@ -77,16 +68,11 @@
         display: inline;
     }
 
-    .header-img img {
-        float: top;
+    .header-img{
+        max-height: 500px;
         width: 100%;
     }
 
-    .main {
-        position: absolute;
-        margin: 0 5% 0 5%;
-        width: 50%;
-    }
 
     .sub-section{
         float: right;
