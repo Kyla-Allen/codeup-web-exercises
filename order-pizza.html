@@ -8,11 +8,11 @@
     <link rel="stylesheet" href="css/custom.css">
 
 </head>
-<body>
+<body id="top">
 
 <!--navbar-->
-<nav class="navbar navbar-expand-sm navbar-light">
-    <ul class="navbar-nav nav-tabs">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <ul class="navbar-nav nav-tabs mx-auto">
         <li class="nav-item list-group-item"><a href="#" class="navbar-brand"> Pizza World! </a></li>
         <li class="nav-item list-group-item active"><a href="#" class="nav-link"> Order Here </a></li>
         <li class="nav-item list-group-item"><a href="#" class="nav-link"> Menu</a></li>
@@ -22,7 +22,7 @@
                 <button type="submit"> Search For a Store</button>
             </form>
         </li>
-        <li class="nav-item list-group-item justify-content-right"><a href="#" class="nav-link">Sign Up</a></li>
+        <li class="nav-item list-group-item justify-content-right ml-5"><a href="#" class="nav-link">Sign Up</a></li>
     </ul>
 </nav>
 
@@ -30,17 +30,17 @@
 
 <div class="container d-sm-none d-md-block">
 
-    <div class="jumbotron img-fluid">
-        <h1 class="display-2"> Welcome to Pizza World! </h1>
+    <div class="jumbotron">
+        <h1 class="display-2 img-fluid"> Welcome to Pizza World </h1>
     </div>
 
     <!--Build own Pizza nav and page -->
     <h2> Build Your Own Pizza </h2>
 
     <ul class="nav-tabs form-inline">
-        <li class="nav-item list-group-item"> <a href="#"> <span class="badge">1</span>Size and Crust </a></li>
-        <li class="nav-item list-group-item"> <a href="#"> <span class="badge">2</span>Cheese and Sauce</a></li>
-        <li class="nav-item list-group-item"> <a href="#"> <span class="badge">3</span>Toppings</a></li>
+        <li class="nav-item list-group-item"> <a href="#sizeandcrust"> <span class="badge">1</span>Size and Crust </a></li>
+        <li class="nav-item list-group-item"> <a href="#cheeseandsauce"> <span class="badge">2</span>Cheese and Sauce</a></li>
+        <li class="nav-item list-group-item"> <a href="#topping"> <span class="badge">3</span>Toppings</a></li>
     </ul>
 
 
@@ -54,20 +54,22 @@ LINE BREAK
 
 
     <!--Card 1-->
-    <div class="card">
+    <div class="card bg-light">
         <div class="card-body">
-            <h2 class="bg-primary text-white"> Choose Size and Crust </h2>
+            <h2 class="bg-primary text-white" id="sizeandcrust"> Choose Size and Crust </h2>
 
             <!--inner card 1-->
             <div class="card">
                 <div class="card-body">
                     <form>
                         <div class="input-group">
-                            <ul class="list-group">
+                            <ul class="list-group w-100">
                                 <li class="list-group-item bg-light"> Hand Tossed </li>
                                 <li class="list-group-item"> Garlic seasoned crust with a rich, buttery taste</li>
+                                <form>
                                 <li class="list-group-item"> <input type="radio" name="pizza_tab_1"> Small (10") </li>
                                 <li class="list-group-item"> <input type="radio" name="pizza_tab_1"> Medium (12") </li>
+                                </form>
                             </ul>
                         </div>
                     </form>
@@ -81,11 +83,13 @@ LINE BREAK
                 <div class="card-body">
                     <form>
                         <div class="input-group">
-                            <ul class="list-group">
+                            <ul class="list-group w-100">
                                 <li class="list-group-item bg-light"> Crispy Thin </li>
                                 <li class="list-group-item"> Thin enough for the optimal crispy to crunchy ratio</li>
+                                <form>
                                 <li class="list-group-item"> <input type="radio" name="pizza_tab_1"> Medium (12") </li>
                                 <li class="list-group-item"> <input type="radio" name="pizza_tab_1"> Large (14") </li>
+                                </form>
                             </ul>
                         </div>
                     </form>
@@ -110,23 +114,25 @@ LINE BREAK
 --------->
 
     <!--Card 2-->
-    <div class="card">
+    <div class="card bg-light">
         <div class="card-body">
-            <h2 class="bg-primary text-white"> Choose Cheese and Sauce </h2>
+            <h2 class="bg-primary text-white" id="cheeseandsauce"> Choose Cheese and Sauce </h2>
             <!--Inner card 1-->
             <div class="card">
                 <div class="card-body">
                     <ul class="list-group">
                         <li class="list-group-item bg-light"> Cheese</li>
                         <li class="list-group-item">
-                            How Much?
+                            <label for="select1"> How Much? </label>
                             <br>
-                            <select>
+                            <form>
+                            <select id="select1">
                                 <option> Light </option>
                                 <option> Normal </option>
                                 <option> Extra </option>
                                 <option> Double </option>
                             </select>
+                            </form>
                         </li>
                     </ul>
                 </div>
@@ -139,24 +145,28 @@ LINE BREAK
                     <ul class="list-group">
                         <li class="list-group-item bg-light"> Sauce </li>
                         <li class="list-group-item">
-                            What Type?
+                            <label for="select2">What Type?</label>
                             <br>
-                            <select>
+                            <form>
+                            <select id="select2">
                                 <option> Tomato </option>
                                 <option> Marinara </option>
                                 <option> BBQ </option>
                                 <option> Alfredo </option>
                             </select>
+                            </form>
                         </li>
                         <li class="list-group-item">
 
-                            How much?
+                            <label for="select3">How much?</label>
                             <br>
-                            <select>
+                            <form>
+                            <select id="select3">
                                 <option>Light</option>
                                 <option>Normal</option>
                                 <option>Extra</option>
                             </select>
+                            </form>
 
                         </li>
                     </ul>
@@ -180,14 +190,15 @@ LINE BREAK
     --------->
 
     <!--Card 3-->
-    <div class="card">
+    <div class="card bg-light">
         <div class="card-body">
-            <h2 class="bg-primary text-white"> Choose Toppings</h2>
+            <h2 class="bg-primary text-white" id="topping"> Choose Toppings</h2>
 
             <!--Inner card 1-->
             <div class="card">
                 <div class="card-body">
                     <ul class="list-group">
+                        <form>
                         <li class="list-group-item bg-light"> Choose Meats </li>
                         <li class="list-group-item">
                             <label for="beef"> Beef </label>
@@ -205,6 +216,7 @@ LINE BREAK
                             <label for="bacon"> Bacon </label>
                             <input type="checkbox" id="bacon" name="bacon">
                         </li>
+                        </form>
                     </ul>
                 </div>
             </div>
@@ -213,6 +225,7 @@ LINE BREAK
             <div class="card">
                 <div class="card-body">
                     <ul class="list-group">
+                        <form>
                         <li class="list-group-item bg-light"> Choose Non-Meats. Such as Magma and Asparagus</li>
                         <li class="list-group-item">
                             <label for="peppers"> Green Peppers </label>
@@ -230,6 +243,7 @@ LINE BREAK
                             <label for="jalapeppers"> Jalapeno Peppers </label>
                             <input type="checkbox" id="jalapeppers" name="jalapeppers">
                         </li>
+                        </form>
                     </ul>
                 </div>
             </div>
@@ -241,9 +255,8 @@ LINE BREAK
         </div>
     </div>
 
-
-
 </div> <!--End of Container-->
+
 
 
 <!--Javascript-->
