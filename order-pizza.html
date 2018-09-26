@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/custom.css">
+
+</head>
+<body>
+
+<!--navbar-->
+<nav class="navbar navbar-expand-sm navbar-light">
+    <ul class="navbar-nav nav-tabs">
+        <li class="nav-item list-group-item"><a href="#" class="navbar-brand"> Pizza World! </a></li>
+        <li class="nav-item list-group-item active"><a href="#" class="nav-link"> Order Here </a></li>
+        <li class="nav-item list-group-item"><a href="#" class="nav-link"> Menu</a></li>
+        <li class="nav-item list-group-item">
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="text" name="zipcode" placeholder="Zipcode">
+                <button type="submit"> Search For a Store</button>
+            </form>
+        </li>
+        <li class="nav-item list-group-item justify-content-right"><a href="#" class="nav-link">Sign Up</a></li>
+    </ul>
+</nav>
+
+<!--Container-->
+
+<div class="container d-sm-none d-md-block">
+
+    <div class="jumbotron img-fluid">
+        <h1 class="display-2"> Welcome to Pizza World! </h1>
+    </div>
+
+    <!--Build own Pizza nav and page -->
+    <h2> Build Your Own Pizza </h2>
+
+    <ul class="nav-tabs form-inline">
+        <li class="nav-item list-group-item"> <a href="#"> <span class="badge">1</span>Size and Crust </a></li>
+        <li class="nav-item list-group-item"> <a href="#"> <span class="badge">2</span>Cheese and Sauce</a></li>
+        <li class="nav-item list-group-item"> <a href="#"> <span class="badge">3</span>Toppings</a></li>
+    </ul>
+
+
+    <!---------
+-----------
+----------
+LINE BREAK
+---------
+---------
+--------->
+
+
+    <!--Card 1-->
+    <div class="card">
+        <div class="card-body">
+            <h2 class="bg-primary text-white"> Choose Size and Crust </h2>
+
+            <!--inner card 1-->
+            <div class="card">
+                <div class="card-body">
+                    <form>
+                        <div class="input-group">
+                            <ul class="list-group">
+                                <li class="list-group-item bg-light"> Hand Tossed </li>
+                                <li class="list-group-item"> Garlic seasoned crust with a rich, buttery taste</li>
+                                <li class="list-group-item"> <input type="radio" name="pizza_tab_1"> Small (10") </li>
+                                <li class="list-group-item"> <input type="radio" name="pizza_tab_1"> Medium (12") </li>
+                            </ul>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+
+
+        <!---Inner card 2-->
+            <div class="card">
+                <div class="card-body">
+                    <form>
+                        <div class="input-group">
+                            <ul class="list-group">
+                                <li class="list-group-item bg-light"> Crispy Thin </li>
+                                <li class="list-group-item"> Thin enough for the optimal crispy to crunchy ratio</li>
+                                <li class="list-group-item"> <input type="radio" name="pizza_tab_1"> Medium (12") </li>
+                                <li class="list-group-item"> <input type="radio" name="pizza_tab_1"> Large (14") </li>
+                            </ul>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+           <!--Footer for Crust Tab-->
+            <footer class="bg-secondary">
+                <button type="submit" class="text-white float-right btn btn-primary">Next Step</button>
+            </footer>
+
+        </div>
+    </div>
+
+
+<!---------
+-----------
+----------
+LINE BREAK
+---------
+---------
+--------->
+
+    <!--Card 2-->
+    <div class="card">
+        <div class="card-body">
+            <h2 class="bg-primary text-white"> Choose Cheese and Sauce </h2>
+            <!--Inner card 1-->
+            <div class="card">
+                <div class="card-body">
+                    <ul class="list-group">
+                        <li class="list-group-item bg-light"> Cheese</li>
+                        <li class="list-group-item">
+                            How Much?
+                            <br>
+                            <select>
+                                <option> Light </option>
+                                <option> Normal </option>
+                                <option> Extra </option>
+                                <option> Double </option>
+                            </select>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!--Inner card 2-->
+            <div class="card">
+                <div class="card-body">
+
+                    <ul class="list-group">
+                        <li class="list-group-item bg-light"> Sauce </li>
+                        <li class="list-group-item">
+                            What Type?
+                            <br>
+                            <select>
+                                <option> Tomato </option>
+                                <option> Marinara </option>
+                                <option> BBQ </option>
+                                <option> Alfredo </option>
+                            </select>
+                        </li>
+                        <li class="list-group-item">
+
+                            How much?
+                            <br>
+                            <select>
+                                <option>Light</option>
+                                <option>Normal</option>
+                                <option>Extra</option>
+                            </select>
+
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+            <!--Footer-->
+            <footer>
+                <button type="submit" class="text-white float-right btn btn-primary">Next Step</button>
+                <button type="button" class="text-white float-right btn btn-primary">Previous Step</button>
+            </footer>
+        </div>
+    </div>
+
+    <!---------
+    -----------
+    ----------
+    LINE BREAK
+    ---------
+    ---------
+    --------->
+
+    <!--Card 3-->
+    <div class="card">
+        <div class="card-body">
+            <h2 class="bg-primary text-white"> Choose Toppings</h2>
+
+            <!--Inner card 1-->
+            <div class="card">
+                <div class="card-body">
+                    <ul class="list-group">
+                        <li class="list-group-item bg-light"> Choose Meats </li>
+                        <li class="list-group-item">
+                            <label for="beef"> Beef </label>
+                            <input type="checkbox" id="beef" name="beef">
+                        </li>
+                        <li class="list-group-item">
+                            <label for="ham"> Ham </label>
+                           <input type="checkbox" id="ham" name="ham">
+                        </li>
+                        <li class="list-group-item">
+                            <label for="steak"> Philly Steak</label>
+                            <input type="checkbox" id="steak" name="steak">
+                        </li>
+                        <li class="list-group-item">
+                            <label for="bacon"> Bacon </label>
+                            <input type="checkbox" id="bacon" name="bacon">
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!--Inner card 2-->
+            <div class="card">
+                <div class="card-body">
+                    <ul class="list-group">
+                        <li class="list-group-item bg-light"> Choose Non-Meats. Such as Magma and Asparagus</li>
+                        <li class="list-group-item">
+                            <label for="peppers"> Green Peppers </label>
+                            <input type="checkbox" id="peppers" name="peppers">
+                        </li>
+                        <li class="list-group-item">
+                            <label for="mushrooms"> Mushrooms </label>
+                            <input type="checkbox" id="mushrooms" name="mushrooms">
+                        </li>
+                        <li class="list-group-item">
+                            <label for="onions"> Onions </label>
+                            <input type="checkbox" id="onions" name="onions">
+                        </li>
+                        <li class="list-group-item">
+                            <label for="jalapeppers"> Jalapeno Peppers </label>
+                            <input type="checkbox" id="jalapeppers" name="jalapeppers">
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!--footer-->
+            <footer>
+                <button type="submit" class="text-white float-right btn btn-primary"> Checkout </button>
+            </footer>
+        </div>
+    </div>
+
+
+
+</div> <!--End of Container-->
+
+
+<!--Javascript-->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+</body>
+</html>
