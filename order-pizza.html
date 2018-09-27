@@ -5,6 +5,7 @@
     <title>Welcome</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
           integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <link rel="stylesheet" href="css/custom.css">
 
 </head>
@@ -31,16 +32,16 @@
 <div class="container d-sm-none d-md-block">
 
     <div class="jumbotron">
-        <h1 class="display-2 img-fluid"> Welcome to Pizza World </h1>
+        <h1 class="display-2 img-fluid"> <mark style="opacity: 0.7"> Welcome to Pizza World</mark> </h1>
     </div>
 
     <!--Build own Pizza nav and page -->
     <h2> Build Your Own Pizza </h2>
 
     <ul class="nav-tabs form-inline">
-        <li class="nav-item list-group-item"> <a href="#sizeandcrust"> <span class="badge">1</span>Size and Crust </a></li>
-        <li class="nav-item list-group-item"> <a href="#cheeseandsauce"> <span class="badge">2</span>Cheese and Sauce</a></li>
-        <li class="nav-item list-group-item"> <a href="#topping"> <span class="badge">3</span>Toppings</a></li>
+        <li class="nav-item list-group-item"> <a href="#sizeandcrust"> <span class="badge badge-pill badge-dark">1</span>Size and Crust </a></li>
+        <li class="nav-item list-group-item"> <a href="#cheeseandsauce"> <span class="badge badge-pill badge-dark">2</span>Cheese and Sauce</a></li>
+        <li class="nav-item list-group-item"> <a href="#topping"> <span class="badge badge-pill badge-dark">3</span>Toppings</a></li>
     </ul>
 
 
@@ -98,7 +99,7 @@ LINE BREAK
 
            <!--Footer for Crust Tab-->
             <footer class="bg-secondary">
-                <button type="submit" class="text-white float-right btn btn-primary">Next Step</button>
+                <button type="submit" class="text-white float-right btn btn-primary">Next Step<span class="fas fa-angle-right"></span></button>
             </footer>
 
         </div>
@@ -175,8 +176,8 @@ LINE BREAK
             </div>
             <!--Footer-->
             <footer>
-                <button type="submit" class="text-white float-right btn btn-primary">Next Step</button>
-                <button type="button" class="text-white float-right btn btn-primary">Previous Step</button>
+                <button type="submit" class="text-white float-right btn btn-primary"> Next Step<span class="fas fa-angle-right"></span> </button>
+                <button type="button" class="text-white float-right btn btn-primary"><span class="fas fa-angle-left"></span>Previous Step</button>
             </footer>
         </div>
     </div>
@@ -224,8 +225,9 @@ LINE BREAK
             <!--Inner card 2-->
             <div class="card">
                 <div class="card-body">
+                    <form>
                     <ul class="list-group">
-                        <form>
+
                         <li class="list-group-item bg-light"> Choose Non-Meats. Such as Magma and Asparagus</li>
                         <li class="list-group-item">
                             <label for="peppers"> Green Peppers </label>
@@ -243,14 +245,15 @@ LINE BREAK
                             <label for="jalapeppers"> Jalapeno Peppers </label>
                             <input type="checkbox" id="jalapeppers" name="jalapeppers">
                         </li>
-                        </form>
+
                     </ul>
+                    </form>
                 </div>
             </div>
 
             <!--footer-->
             <footer>
-                <button type="submit" class="text-white float-right btn btn-primary"> Checkout </button>
+                <button type="submit" class="text-white float-right btn btn-primary">Checkout <span class="fas fa-shopping-cart"></span></button>
             </footer>
         </div>
     </div>
