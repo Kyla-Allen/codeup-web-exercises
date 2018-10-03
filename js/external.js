@@ -112,7 +112,7 @@ if (premiumMember === "y" && offerExpired === "n")
 {
     alert("Awesome! You get the deal!");
 }
-else if ((items_bought >= MIN_ITEMS) && offerExpired === "n")
+else if ((items_bought > MIN_ITEMS) && offerExpired === "n")
 {
     alert("Awesome! You get the deal!");
 }
