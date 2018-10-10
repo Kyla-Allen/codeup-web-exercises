@@ -1,0 +1,193 @@
+
+
+body {
+    background-color: #F0F0F0;
+    font-family: 'Abel', sans-serif;
+}
+
+.top-nav {
+    list-style-type: none;
+    padding-left: 0;
+}
+.codeup-title{
+    font-size: 35px;
+}
+
+.top-nav-first {
+    text-align: center;
+}
+.top-nav-second {
+    text-align: center;
+}
+
+.large-screen-nav{
+    margin-top: 5px;
+}
+
+.third-navbar{
+    text-align: right;
+    position: absolute;
+    right: 10px;
+    top: 30px;
+}
+
+
+.large-screen-links{
+    font-size: larger;
+    margin-left: 3px;
+}
+
+
+
+.white-stripe{
+    background-color: white;
+    width: 100%;
+    height: 70px;
+    position: absolute;
+    top: 15px;
+}
+
+
+.logo-item {
+    margin-top: 45px;
+    max-height: 60px;
+    margin-bottom: 10px;
+}
+.top-nav-link {
+    color: #000;
+    margin-right:10px;
+}
+.nav-item {
+    display: inline-block;
+}
+.logo {
+    position: relative;
+    bottom: 23px;
+    max-width: 105px;
+    max-height: 105px;
+}
+
+h1, h2, h3, h4, h5, h6{
+    margin: 0 auto;
+    font-family: 'Anton', sans-serif;
+}
+.m-title{
+    font-size: 40px;
+    margin: 30px 5px;
+    text-align:center;
+}
+
+.m-bottom{
+    margin-bottom: 30px;
+}
+.circle {
+    height: 120px;
+    width: 120px;
+    color: white;
+    line-height: 3.5em;
+    font-size: 30px;
+    border-radius: 50%;
+    display: inline-block;
+    border: 5px solid white;
+    margin: 15px;
+}
+
+.dot p{
+    font-family: 'Anton', sans-serif;
+    margin-top: 2.7em;
+
+}
+.red{
+    background-color: #E6536B;
+}
+
+.orange{
+    background-color: #EB9D3A;
+}
+
+.green{
+    background-color: #7CB06C;
+}
+
+.blue{
+    background-color: #00ABA9;
+}
+.dot-center{
+    text-align: center;
+}
+.margin-top{
+    margin-top: 50px;
+}
+
+.small-dot{
+    height: 18px;
+    width: 18px;
+    color: black;
+    font-size: 10px;
+    border: 0;
+    font-weight: bold;
+    border-radius: 50%;
+    display:inline-block;
+    float:right;
+}
+.imagesize{
+    width:100%;
+}
+
+.container>img {
+    max-width: 100%;
+    height: auto;
+}
+
+.red{
+    background-color: #E6536B;
+}
+
+.orange{
+    background-color: #EB9D3A;
+}
+
+.green{
+    background-color: #7CB06C;
+}
+
+.blue{
+    background-color: #00ABA9;
+}
+.featured-dots{
+    float:left;
+}
+.containerbox{
+    width:400px;
+    height:auto;
+}
+.small-pic{
+    max-width:100%;
+    height: 45px;
+}
+
+.float-l{
+    float: left;
+}
+
+p.float-l{
+    margin: 10px;
+}
+.twitter-float{
+    padding-left: 0;
+}
+.top-link{
+    display:inline;
+    float:left;
+}
+
+p.codeup-title{
+    text-align: center;
+}
+.larger-links{
+    text-align: center;
+    padding-top: 20px;
+}
+.large-img{
+    margin-left:40px;
+}
