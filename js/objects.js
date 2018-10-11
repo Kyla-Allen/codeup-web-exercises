@@ -77,6 +77,29 @@
      * > console.log(books[0].author.lastName) // "Adams"
      */
 
+    var books = [
+        {
+            "title": "Rise of the Killer Apricots",
+            "author": "Charles T. Doopsy"
+        },
+        {
+            "title": "Dawn of the Eggs",
+            "author": "Lori Lorsee"
+        },
+        {
+          "title": "Help! I'm running out of book names!",
+          "author": "Me."
+        },
+        {
+            "title": "Undertale",
+            "author": "Toby Fox"
+        },
+        {
+            "title": "FullMetal Alchemist",
+            "author": "Hiromu Arakawa"
+        }
+    ];
+
     /**
      * TODO:
      * Loop through the books array and output the following information about
@@ -101,6 +124,13 @@
      *      ---
      *      ...
      */
+
+    books.forEach(function (element, index, array) {
+        var bookNum = array.indexOf(element) + 1;
+        console.log("Book # " + bookNum);
+        console.log("Title: " + element.title);
+        console.log("Author: " + element.author);
+    });
 
     /**
      * Bonus:
