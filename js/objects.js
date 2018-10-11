@@ -77,6 +77,8 @@
      * > console.log(books[0].author.lastName) // "Adams"
      */
 
+
+
     var books = [
         {
             "title": "Rise of the Killer Apricots",
@@ -125,12 +127,13 @@
      *      ...
      */
 
-    books.forEach(function (element, index, array) {
-        var bookNum = array.indexOf(element) + 1;
-        console.log("Book # " + bookNum);
-        console.log("Title: " + element.title);
-        console.log("Author: " + element.author);
-    });
+
+    // books.forEach(function (element, index, array) {
+    //     var bookNum = array.indexOf(element) + 1;
+    //     console.log("Book # " + bookNum);
+    //     console.log("Title: " + element.title);
+    //     console.log("Author: " + element.author);
+    // });
 
     /**
      * Bonus:
@@ -142,5 +145,29 @@
      *   outputs the information described above. Refactor your loop to use your
      *   `showBookInfo` function.
      */
+
+    function createBook (title, author){
+        var book = {
+            "title": title,
+            "author": author
+        };
+        return book;
+    }
+    books.push(createBook("Tales of Two Potatoes", "Charles T Doopsy"));
+    books.push(createBook("An Eclair in Time", "Lori Lorsee"));
+    books.push(createBook("Kero Kero", "An actual frog"));
+    books.push(createBook("The Bridge", "Dudette Dude"));
+    books.push(createBook("To Believe", "The Letter Z"));
+
+
+    function showBookInfo(book) {
+        console.log("Title: " + book.title);
+        console.log("Author: " + book.author);
+    }
+
+
+    books.forEach(function (element) {
+        showBookInfo(element);
+    })
 
 })();
