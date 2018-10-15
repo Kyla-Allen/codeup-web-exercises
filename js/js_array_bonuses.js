@@ -66,11 +66,23 @@ var getUniqueValues = function(array){
 
 // Exercise 6. Write a function named reverseArray that takes in an array and returns it reversed, but without altering the original array.
 
+function reverseArray (array){
+    var reversedArray = array.reverse();
+    return reversedArray;
+}
+
+// console.log(Richardsons);
+// console.log(reverseArray(Richardsons));
+
 // Exercies 7. Write a function named getRandomQuote().
 //   Inside of the function, create an array of strings where each string is a quote or thought you find inspirational
 //   getRandomQuote should generate a random number between 0 and the array's length minus 1
 //   use the randomly generated number as your index
 //   return a random quote.
+
+function getRandomQuote (){
+    var quotes = []
+}
 
 // Exercise 8. Write a function named getIndexesOf() that takes in two arguments.
 // The first argument should be a specific numeral or character
@@ -95,4 +107,4 @@ var getUniqueValues = function(array){
 // the function should return the array with the first element at the end
 // Example: moveFirstToLast([1, 2, 3, 4]) should return [2, 3, 4, 1]
 
-console.log(getUniqueValues(["a", "a", "a"]));
+// console.log(getUniqueValues(["a", "a", "a"]));
