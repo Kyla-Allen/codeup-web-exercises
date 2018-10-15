@@ -7,6 +7,7 @@
 <body>
 
 <h1 id="main-header">Hello World!</h1>
+<button id="headerbtn"> CLICK </button>
 <ul>
     <li data-dbid="1">Item 1</li>
     <li data-dbid="2">Item 2</li>
@@ -14,7 +15,9 @@
     <li data-dbid="4">Item 4</li>
     <li data-dbid="5">Item 5</li>
 </ul>
+<button id="listbtn"> CLICK </button>
 <h2 id="sub-header">Hello Again.</h2>
+<button id="sub-header-btn">CLICK</button>
 <p class="sub-paragraph">
     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
     eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
@@ -24,46 +27,76 @@
     pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
     culpa qui officia deserunt mollit anim id est laborum.
 </p>
+<button id="sub-p-btn">CLICK</button>
 
 <script>
     (function() {
         "use strict";
 
+        //~~~~~~~~~~~~~~~~~~~~~~~~The Main Header~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
         var mainHeader = document.getElementById("main-header");
-
-
-        mainHeader.innerHTML = "JavaScript is Coolio, Yo";
-
-
-        var subHeader = document.getElementById("sub-header");
-
-
-        subHeader.style.color = "blue";
-
-
-        var listItems = document.getElementsByTagName("li");
-
-
-        var listItemsARR = Array.from(listItems);
-        listItemsARR.forEach(function (listItem, index) {
-            if (index === 0 || (index % 2 === 0)){
-                listItem.style.color = "gray";
-            }
-        });
-
-
-        for (var i = 0; i < listItems.length; i++){
-            var id = listItems[i].getAttribute("data-dbid");
-            if(id === "1"){
-                listItems[i].style.color = "blue";
+        var headerbtn = document.getElementById("headerbtn");
+        function changeMainHeader (){
+            if (mainHeader.innerText === "Hello World!") {
+                mainHeader.innerText = "JavaScript is Coolio, Yo";
+            } else {
+                mainHeader.innerText = "Hello World!";
             }
         }
+        headerbtn.addEventListener("click", changeMainHeader);
 
 
+
+
+        //~~~~~~~~~~~~~~~~~~~~~~~~~Turning Sub-Header Blue~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+        var subHeader = document.getElementById("sub-header");
+        var subHeaderBtn = document.getElementById("sub-header-btn");
+        function toggleSubHeader(){
+        if( subHeader.style.color === "blue"){
+            subHeader.removeAttribute("style");
+        }
+        else {
+            subHeader.style.color = "blue";
+        }
+        }
+        subHeaderBtn.addEventListener("click", toggleSubHeader);
+
+
+
+
+
+        //~~~~~~~~~~~~~~~~~~~~~~~~~~~LIST ITEMS~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+        var listItems = document.getElementsByTagName("li");
+        var listBtn = document.getElementById("listbtn");
+        function toggleListColors(){
+            var listItemsARR = Array.from(listItems);
+            listItemsARR.forEach(function (listItem, index) {
+                if (index === 0 || (index % 2 === 0)){
+                    listItem.style.color = "gray";
+                }
+            });
+            //~~~~~~~~~FIRST LIST ITEM BLUE~~~~~~//
+            for (var i = 0; i < listItems.length; i++){
+                var id = listItems[i].getAttribute("data-dbid");
+                if(id === "1"){
+                    listItems[i].style.color = "blue";
+                }
+            }
+        }
+        listBtn.addEventListener("click", toggleListColors);
+
+
+
+
+        //~~~~~~~~~~~~~~~~~~~~~~~~~~~~SUB PARAGRAPH CHANGE TEXT~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
         var subParagraphs = document.getElementsByClassName("sub-paragraph");
+        var subPBtn = document.getElementById("sub-p-btn");
 
+        function toggleSubText () {
+            subParagraphs[0].innerHTML = "<em>Mission Accomplished!</em>";
+        }
 
-        subParagraphs[0].innerHTML = "<em>Mission Accomplished!</em>";
+        subPBtn.addEventListener("click", toggleSubText);
 
     })();
 </script>
