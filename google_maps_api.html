@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="initial-scale=1.0,
+      width=device-width" />
+    <script src="http://js.api.here.com/v3/3.0/mapsjs-core.js"
+            type="text/javascript" charset="utf-8"></script>
+    <script src="http://js.api.here.com/v3/3.0/mapsjs-service.js"
+            type="text/javascript" charset="utf-8"></script>
+    <script src="http://js.api.here.com/v3/3.0/mapsjs-ui.js"
+            type="text/javascript" charset="utf-8"></script>
+    <link rel="stylesheet" type="text/css"
+          href="http://js.api.here.com/v3/3.0/mapsjs-ui.css" />
+</head>
+<body>
+<div style="width: 640px; height: 480px" id="mapContainer"></div>
+
+
+
+
+
+
+<script>
+
+    // Initialize the platform object:
+    var platform = new H.service.Platform({
+        'app_id': 'spTWvUif2h571UglKIdt',
+        'app_code': 'c8CbuoswzaP_OABI624HQA'
+    });
+    // Retrieve the target element for the map:
+    var targetElement = document.getElementById('mapContainer');
+
+    // Get default map types from the platform object:
+    var defaultLayers = platform.createDefaultLayers();
+
+    // Instantiate the map:
+    var map = new H.Map(
+        document.getElementById('mapContainer'),
+        defaultLayers.normal.map,
+        {
+            zoom: 12,
+            center: { lat: 29.426567, lng: -98.4936 }
+        });
+
+    // Create the default UI:
+    var ui = H.ui.UI.createDefault(map, defaultLayers);
+
+
+    //Geocoding~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+    // Create the parameters for the geocoding request:
+    var geocodingParams = {
+        searchText: '1302 Cupples Rd, San Antonio, TX 78226'
+    };
+
+    // Define a callback function to process the geocoding response:
+    var onResult = function(result) {
+        var locations = result.Response.View[0].Result,
+            position,
+            marker;
+        // Add a marker for each location found
+        for (i = 0;  i < locations.length; i++) {
+            position = {
+                lat: locations[i].Location.DisplayPosition.Latitude,
+                lng: locations[i].Location.DisplayPosition.Longitude
+            };
+            marker = new H.map.Marker(position);
+            map.addObject(marker);
+        }
+    };
+
+    // Get an instance of the geocoding service:
+    var geocoder = platform.getGeocodingService();
+    // Call the geocode method with the geocoding parameters,
+    // the callback and an error callback function (called if a
+    // communication error occurs):
+    geocoder.geocode(geocodingParams, onResult, function(e) {
+        alert(e);
+    })
+    //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+
+    //InfoWindow~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+// // Create default map layers with POIs present:
+//     maptypes = platform.createDefaultLayers(256, 160, false, false, null, /*pois*/ true);
+//
+//     // Add metainfo layer to the map:
+//     map.addLayer(maptypes.normal.metaInfo);
+//
+//     // Store a reference to the metaInfo TileProvider:
+//     var tileProvider = maptypes.normal.metaInfo.getProvider();
+//
+//     H.ui.infoBubble.setVisibility(true);
+//     H.ui.infoBubble.setPosition(onResult);
+//     H.ui.infoBubble.setContent("Rocky's Taco House");
+
+    function createInfoBubble(map) {
+        // Create info bubble
+        var bubble = new H.ui.InfoBubble({ lng: -98.549313, lat: 29.395037  }, {
+            content: '<b>"Rocky\'s Taco House"</b>'
+        });
+        // Add info bubble to the UI:
+        ui.addBubble(bubble);
+    }
+    createInfoBubble(map);
+
+
+
+</script>
+</body>
+</html>
