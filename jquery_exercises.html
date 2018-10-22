@@ -25,12 +25,24 @@ wekdshlwaiek
 <script src="js/jquery-2.x-git.js"></script>
 <script>
     "use strict";
- $("li").css("font-size", "20px");
- $("li, h1, p").css("background-color", "yellow");
- var contents = $("h1").html();
- alert(contents);
+ $("h1").click(function (e) {
+     $("h1").css("background-color", "pink");
+ })
 
+var para = $("p");
+ para.dblclick(function (e) {
+     para.css("font-size", "18px");
+ })
 
+var list = $("li");
+ function changeToRed (){
+     list.css("color", "red");
+ }
+    function changeToBlack (){
+        list.css("color", "black");
+    }
+
+ list.hover(changeToRed,changeToBlack);
 </script> <!--end of script-->
 </body>
 </html>
