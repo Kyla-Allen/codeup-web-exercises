@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Konami Code</title>
+</head>
+<body>
+<h1> Welcome! </h1>
+
+
+<script src="js/jquery-2.x-git.js"></script>
+<script>
+    "use strict";
+
+    var konami = ["ArrowUp", "ArrowUp", "ArrowDown", "ArrowDown", "ArrowLeft", "ArrowRight", "ArrowLeft", "ArrowRight", "b", "a", "Enter"];
+    var dummyArray = []; //just an array i use to keep track of things
+
+    $(document).on('keyup', function (e) {
+
+        //foreach loop that goes through the konami array and compares it to the key pressed
+        konami.forEach(function (key) {
+            if (e.key === key ){
+               var newItem = konami.shift();
+               dummyArray.unshift(newItem);
+            }
+        });
+
+
+        //completeion of konami code does this....
+        if ((dummyArray.length === 11) && (e.key === "Enter")){
+            alert("Konami Code Complete");
+        }
+
+        console.log(dummyArray);
+    });
+
+
+</script>
+</body>
+</html>
