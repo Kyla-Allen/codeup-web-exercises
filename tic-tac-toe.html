@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tic-Tac-Toe</title>
+    <!--CSS-->
+    <style>
+        .container{
+            margin: 0 auto;
+            width: 80%;
+            max-width: 1200px;
+        }
+        .row{
+            text-align: center;
+            width: 100%;
+        }
+        .box{
+            box-sizing: border-box;
+            float:left;
+            width: 33%;
+            height: 50px;
+            padding: 50px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+<h1> TICK-TACK-PADDYWHACK-GIVE-THE-DOG-A-BONE- ....what, that's not the game?</h1>
+<h3 class="turnOf"></h3>
+
+<!--tictactoe board--->
+
+<div class="container">
+    <div class="row">
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+</div>
+<div class="row">
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+</div>
+<div class="row">
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+</div>
+</div>
+
+<!--JS-->
+<script src="js/jquery-2.x-git.js"></script>
+<script>
+    "use strict";
+
+    //VARIABLES
+    var isX = true; //X's turn by default
+    var boxes = $(".box"); //getting all items with the class box
+    var turnOf = $(".turnOf"); //getting the header that displays who's turn it is
+    turnOf.html("It's the turn of X");
+
+
+    //FUNCTIONS
+
+    //hover over a box and it changes color
+    boxes.hover(
+        function (e) {
+            $(this).css("background-color", "#3B94D9");
+        } ,
+        function (e) {
+            $(this).css("background-color", "white");
+        }
+    )
+
+    //TODO: Make clicked boxes no longer clickable
+    boxes.click(function (e) {
+        if (isX === true){
+            $(this).html("x");
+            isX = false;
+            turnOf.html("It's the turn of O");
+        }
+        else {
+            $(this).html("o");
+            isX = true;
+            turnOf.html("It's the turn of X");
+        }
+    });
+
+
+
+
+
+</script>
+</body>
+</html>
