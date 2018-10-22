@@ -70,17 +70,19 @@
         function (e) {
             $(this).css("background-color", "white");
         }
-    )
+    );
 
-    //TODO: Make clicked boxes no longer clickable
+    //Updates boxes and makes the clicked boxes unclickable
     boxes.click(function (e) {
         if (isX === true){
             $(this).html("x");
+            $(this).off("click");
             isX = false;
             turnOf.html("It's the turn of O");
         }
         else {
             $(this).html("o");
+            $(this).off("click");
             isX = true;
             turnOf.html("It's the turn of X");
         }
