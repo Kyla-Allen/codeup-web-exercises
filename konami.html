@@ -13,25 +13,24 @@
     "use strict";
 
     var konami = ["ArrowUp", "ArrowUp", "ArrowDown", "ArrowDown", "ArrowLeft", "ArrowRight", "ArrowLeft", "ArrowRight", "b", "a", "Enter"];
-    var dummyArray = []; //just an array i use to keep track of things
+    var i = 0; //current position in array
+    var dummy = 0; //number of place in the konami array
 
+
+    //the function that fires when a key is pressed
     $(document).on('keyup', function (e) {
 
-        //foreach loop that goes through the konami array and compares it to the key pressed
-        konami.forEach(function (key) {
-            if (e.key === key ){
-               var newItem = konami.shift();
-               dummyArray.unshift(newItem);
-            }
-        });
-
-
-        //completeion of konami code does this....
-        if ((dummyArray.length === 11) && (e.key === "Enter")){
-            alert("Konami Code Complete");
+        if (e.key === konami[i] ){
+            dummy += 1;
+            i ++; //goes through array
+        } else {
+            dummy = 0; i = 0; //resets position
         }
 
-        console.log(dummyArray);
+        //completion of konami code does this....
+        if ((dummy=== 11) && (e.key === "Enter")){
+            alert("Konami Code Complete");
+        }
     });
 
 
