@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        li {
+            list-style: none;
+            border: 1px solid firebrick;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+
+<ul>
+    <li><img src="images/pikachu.png"></li>
+    <button class="left"> Click </button>
+    <li><img src="images/magikarp.png"></li>
+    <button class="middle"> Click </button>
+    <li><img src="images/gengar.png"></li>
+    <button class="right"> Click </button>
+</ul>
+
+<!--Js-->
+<script src="js/jquery-2.x-git.js"></script>
+<script>
+
+    "use strict";
+
+    //VARIABLES
+    var leftBtn = $(".left");
+    var midBtn = $(".middle");
+    var rightBtn = $(".right");
+
+
+    //STUFF THAT HAPPENS
+
+    // left button clicked
+    leftBtn.on('click', function (e) {
+        var grabLeft = $(this).prev().html();
+        var grabRight = $(this).next().html();
+
+        //switching the pictures
+        $(this).prev().html(grabRight);
+        $(this).next().html(grabLeft);
+    })
+
+    //middle button clicked
+    midBtn.on('click', function (e) {
+        var grabLeft = $(this).prev().html();
+        var grabRight = $(this).next().html();
+
+        //switching the pictures
+        $(this).prev().html(grabRight);
+        $(this).next().html(grabLeft);
+    })
+
+    //right button clicked
+    midBtn.on('click', function (e) {
+        var grabLeft = $(this).prev().html();
+        var grabRight = $(this).next().html();
+
+        //switching the pictures
+        $(this).prev().html(grabRight);
+        $(this).next().html(grabLeft);
+    })
+
+
+</script>
+</body>
+</html>
