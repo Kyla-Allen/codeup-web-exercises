@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Konami Code</title>
+    <style>
+        @font-face {
+            font-family: sinister;
+            src: url("fonts/October Crow.ttf");
+        }
+        .sinister{
+            text-align: center;
+            font-family: sinister;
+            color: red;
+        }
+        img , audio {
+            display: block;
+            margin: 0 auto;
+        }
+        .elmo_block img{
+            display: inline-block;
+            float: left;
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+<h1> Welcome! </h1>
+<img src="images/elmo.gif" class="elmo">
+<audio autoplay>
+    <source src="audio/Elmos%20World%20in%20G%20Major.mp3" type="audio/mpeg">
+</audio>
+<p> </p>
+
+<ul class="elmo_block">
+    <li><img class="elmo" src="images/more_elmo.gif"></li>
+    <li><img class="elmo" src="images/more_elmo.gif"></li>
+    <li><img class="elmo" src="images/more_elmo.gif"></li>
+</ul>
+
+
+
+<!--script-->
+<script src="js/jquery-2.x-git.js"></script>
+<script>
+    "use strict";
+
+    //VARIABLES
+    var konami = ["ArrowUp", "ArrowUp", "ArrowDown", "ArrowDown", "ArrowLeft", "ArrowRight", "ArrowLeft", "ArrowRight", "b", "a", "Enter"];
+    var i = 0; //current position in array
+    var dummy = 0; //number of place in the konami array
+
+    //default hides...
+        $(".elmo").hide();
+        $("audio").hide();
+        $("ul").hide();
+
+
+        //STUFF THAT HAPPENS
+    //the function that fires when a key is pressed
+    $(document).on('keyup', function (e) {
+
+        if (e.key === konami[i] ){
+            dummy += 1;
+            i ++; //goes through array
+        } else {
+            dummy = 0; i = 0; //resets position
+        }
+
+        //completion of konami code does this....
+        if ((dummy=== 11) && (e.key === "Enter")){
+            //whole thing
+            $("body").css("background-color", "black");//change the background
+
+
+            //header
+            $("h1").addClass("sinister");
+
+            //main content
+            $(".elmo").show();
+            $("audio").show();
+            $("ul").show();
+
+            //AUTOPLAY AUDIO
+            $("audio").ready(function() {
+                $("audio").get(0).play();
+            });
+
+        }
+    });
+
+        //when audio is done playing....
+        $("audio").on("ended", function (e) {
+            $(this).currentTime = 0;
+            //whole thing
+            $("body").css("background-color", "white");
+            $("body").removeClass("spoopBG"); //change the background
+
+
+            //header
+            $("h1").removeClass("sinister");
+
+            //main content
+            $(".elmo").hide();
+            $("audio").hide();
+            $("ul").hide();
+        })
+
+
+</script>
+</body>
+</html>
