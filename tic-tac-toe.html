@@ -48,6 +48,8 @@
 </div>
 </div>
 
+
+
 <!--JS-->
 <script src="js/jquery-2.x-git.js"></script>
 <script>
@@ -80,28 +82,23 @@
         if (isX === true){
             $(this).html("x");
             $(this).off("click");
-            XWins;
+            $(this).addClass('Xed');
             isX = false;
             turnOf.html("It's the turn of O");
         }
         else {
             $(this).html("o");
             $(this).off("click");
-            Owins;
+            $(this).addClass('Oed');
             isX = true;
             turnOf.html("It's the turn of X");
         }
     });
 
-    //sees if the player with X won
-    function XWins (){
-        Xs.unshift($(this)); //adds box to the X array
-    }
+    //
 
-    //sees if the player with O won
-    function Owins (){
-        Os.unshift($(this)); //adds box to the O array
-    }
+
+
 
 
 

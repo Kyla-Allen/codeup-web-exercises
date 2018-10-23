@@ -37,7 +37,34 @@
     <dt> Fact 10</dt>
     <dd class="invisible"> Blah </dd>
 </dl>
-
+<section>
+    <h3> Section 1 </h3>
+    <ul>
+        <li> blah </li>
+        <li> blah </li>
+        <li> blah </li>
+        <li> blah </li>
+    </ul>
+</section>
+<section>
+    <h3> Section 2 </h3>
+    <ul>
+        <li> blah </li>
+        <li> blah </li>
+        <li> blah </li>
+        <li> blah </li>
+    </ul>
+</section>
+<section>
+    <h3> Section 3 </h3>
+    <ul>
+        <li> blah </li>
+        <li> blah </li>
+        <li> blah </li>
+        <li> blah </li>
+    </ul>
+</section>
+<button> Click </button>
 
 
 <!--JS-->
@@ -58,6 +85,29 @@
     $("dt").click(function (e) {
         $(this).toggleClass('hilight');
     })
+
+
+    //Create a button that, when clicked, makes the last li in each ul have a yellow background.
+    $("button").click(function (e) {
+        $("ul").each(function (index, ul) {
+            $(this).children().last().css("background", "yellow");
+        })
+    })
+
+    // When any h3 is clicked, the lis underneath it should be bolded. Use font-weight: bold to achieve this.
+    //
+    $("h3").click(function (e) {
+        $(this).next().children().css("font-weight", "bold");
+    })
+
+
+    //     When any list item is clicked, first li of the parent ul should have a font color of blue.
+    $("li").on('click', function (e) {
+        $(this).parent().children().first().css("color", "blue");
+    })
+
+
+
 
 
 
