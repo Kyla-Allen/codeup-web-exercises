@@ -9,6 +9,10 @@
             border: 1px solid firebrick;
             display: inline-block;
         }
+
+        img {
+            float: left;
+        }
     </style>
 </head>
 <body>
@@ -47,6 +51,7 @@
     })
 
     //middle button clicked
+    //TODO: make the picture in the middle go randomly left or right
     midBtn.on('click', function (e) {
         var grabLeft = $(this).prev().html();
         var grabRight = $(this).next().html();
@@ -57,13 +62,13 @@
     })
 
     //right button clicked
-    midBtn.on('click', function (e) {
-        var grabLeft = $(this).prev().html();
-        var grabRight = $(this).next().html();
+    rightBtn.on('click', function (e) {
+        var grabLeft = $(this).prev().prev().prev().html();
+        var grabRight = $(this).prev().html();
 
         //switching the pictures
-        $(this).prev().html(grabRight);
-        $(this).next().html(grabLeft);
+        $(this).prev().prev().prev().html(grabRight);
+        $(this).prev().html(grabLeft);
     })
 
 
