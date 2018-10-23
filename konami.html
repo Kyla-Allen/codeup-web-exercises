@@ -49,6 +49,7 @@
 <script>
     "use strict";
 
+    //VARIABLES
     var konami = ["ArrowUp", "ArrowUp", "ArrowDown", "ArrowDown", "ArrowLeft", "ArrowRight", "ArrowLeft", "ArrowRight", "b", "a", "Enter"];
     var i = 0; //current position in array
     var dummy = 0; //number of place in the konami array
@@ -59,6 +60,7 @@
         $("ul").hide();
 
 
+        //STUFF THAT HAPPENS
     //the function that fires when a key is pressed
     $(document).on('keyup', function (e) {
 
@@ -83,6 +85,7 @@
             $("audio").show();
             $("ul").show();
 
+            //AUTOPLAY AUDIO
             $("audio").ready(function() {
                 $("audio").get(0).play();
             });
