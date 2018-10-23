@@ -7,6 +7,9 @@
         .invisible {
             display: none;
         }
+        .hilight {
+            background-color: yellow;
+        }
     </style>
 </head>
 <body>
@@ -49,6 +52,11 @@
     //toggle
     $("a").click(function (e) {
         $("dd").toggleClass('invisible');
+    })
+
+    //highlight
+    $("dt").click(function (e) {
+        $(this).toggleClass('hilight');
     })
 
 
