@@ -57,7 +57,10 @@
     var isX = true; //X's turn by default
     var boxes = $(".box"); //getting all items with the class box
     var turnOf = $(".turnOf"); //getting the header that displays who's turn it is
-    turnOf.html("It's the turn of X");
+    turnOf.html("It's the turn of X"); //default
+
+    var Xs = [];//to hold the boxes checked with X
+    var Os = [];//to hold the boxes checked with Y
 
 
     //FUNCTIONS
@@ -77,16 +80,29 @@
         if (isX === true){
             $(this).html("x");
             $(this).off("click");
+            XWins;
             isX = false;
             turnOf.html("It's the turn of O");
         }
         else {
             $(this).html("o");
             $(this).off("click");
+            Owins;
             isX = true;
             turnOf.html("It's the turn of X");
         }
     });
+
+    //sees if the player with X won
+    function XWins (){
+        Xs.unshift($(this)); //adds box to the X array
+    }
+
+    //sees if the player with O won
+    function Owins (){
+        Os.unshift($(this)); //adds box to the O array
+    }
+
 
 
 
