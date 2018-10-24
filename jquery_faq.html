@@ -13,6 +13,11 @@
     </style>
 </head>
 <body>
+<div>
+    <h1> Would you like to sign up for our newsletter?</h1>
+    <span>X</span>
+    <h2> please register </h2>
+</div>
 
 <h3> Facts </h3>
 <dl>
@@ -96,9 +101,9 @@
 
     // When any h3 is clicked, the lis underneath it should be bolded. Use font-weight: bold to achieve this.
     //
-    $("h3").click(function (e) {
-        $(this).next().children().css("font-weight", "bold");
-    })
+    // $("h3").click(function (e) {
+    //     $(this).next().children().css("font-weight", "bold");
+    // })
 
 
     //     When any list item is clicked, first li of the parent ul should have a font color of blue.
@@ -106,6 +111,28 @@
         $(this).parent().children().first().css("color", "blue");
     })
 
+    // When the 'x' is clicked, hide the entire div element.
+    $('span').on('click', function (e) {
+        $(this).parent().hide();
+
+    })
+
+    // The uls next to each h3 that contain facts about each park should
+    // start out hidden, and when the corresponding h3 is clicked, the display
+    // of the ul should be toggled with a sliding effect.
+    //
+    $('ul').hide();
+    $('h3').on('click', function (e) {
+        $(this).next().slideToggle();
+    })
+
+    //     After the user has been on the page for 8 seconds,
+    // an h2 should fade in that asks the user to register for the site.
+    $('h2').hide();
+
+    setTimeout(function () {
+        $('h2').fadeIn();
+    }, 8000);
 
 
 
