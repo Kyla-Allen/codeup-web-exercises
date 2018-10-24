@@ -8,11 +8,8 @@
             list-style: none;
             border: 1px solid firebrick;
             display: inline-block;
-            float: left;
         }
-        button {
-            float: left;
-        }
+
     </style>
 </head>
 <body>
@@ -53,13 +50,24 @@
     //middle button clicked
     //TODO: make the picture in the middle go randomly left or right
     midBtn.on('click', function (e) {
-        var grabLeft = $(this).prev().html();
-        var grabRight = $(this).next().html();
+        var leftOrRight = Math.round(Math.random());
+        var leftBox = $(this).prev().prev().prev().html();//left box
+        var midBox = $(this).prev().html();//middle box
+        var rightBox = $(this).next().html();//right box
 
         //switching the pictures
-        $(this).prev().html(grabRight);
-        $(this).next().html(grabLeft);
+        if (leftOrRight === 1) {
+            $(this).prev().prev().prev().html(midBox);//left gets the middle image
+            $(this).prev().html(leftBox);//middle gets the left image
+        } else {
+            $(this).next().html(midBox);//right gets the middle image
+            $(this).prev().html(rightBox);//middle gets the right image
+        }
     })
+
+
+
+
 
     //right button clicked
     rightBtn.on('click', function (e) {
