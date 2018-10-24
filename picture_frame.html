@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        li {
+            list-style: none;
+            border: 1px solid firebrick;
+            display: inline-block;
+        }
+
+    </style>
+</head>
+<body>
+
+<ul>
+    <li><img src="images/pikachu.png"></li>
+    <button class="left"> Click </button>
+    <li><img src="images/magikarp.png"></li>
+    <button class="middle"> Click </button>
+    <li><img src="images/gengar.png"></li>
+    <button class="right"> Click </button>
+</ul>
+
+<!--Js-->
+<script src="js/jquery-2.x-git.js"></script>
+<script>
+
+    "use strict";
+
+    //VARIABLES
+    var leftBtn = $(".left");
+    var midBtn = $(".middle");
+    var rightBtn = $(".right");
+
+
+    //STUFF THAT HAPPENS
+
+    // left button clicked
+    leftBtn.on('click', function (e) {
+        var grabLeft = $(this).prev().html();
+        var grabRight = $(this).next().html();
+
+        //switching the pictures
+        $(this).prev().html(grabRight);
+        $(this).next().html(grabLeft);
+    })
+
+    //middle button clicked
+    //TODO: make the picture in the middle go randomly left or right
+    midBtn.on('click', function (e) {
+        var leftOrRight = Math.round(Math.random());
+        var leftBox = $(this).prev().prev().prev().html();//left box
+        var midBox = $(this).prev().html();//middle box
+        var rightBox = $(this).next().html();//right box
+
+        //switching the pictures
+        if (leftOrRight === 1) {
+            $(this).prev().prev().prev().html(midBox);//left gets the middle image
+            $(this).prev().html(leftBox);//middle gets the left image
+        } else {
+            $(this).next().html(midBox);//right gets the middle image
+            $(this).prev().html(rightBox);//middle gets the right image
+        }
+    })
+
+
+
+
+
+    //right button clicked
+    rightBtn.on('click', function (e) {
+        var grabLeft = $(this).prev().prev().prev().html();
+        var grabRight = $(this).prev().html();
+
+        //switching the pictures
+        $(this).prev().prev().prev().html(grabRight);
+        $(this).prev().html(grabLeft);
+    })
+
+
+</script>
+</body>
+</html>
