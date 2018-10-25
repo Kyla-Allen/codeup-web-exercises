@@ -30,5 +30,12 @@
             "tool"
         ],
         "price": 10
+    }, {
+        "title": "Florp",
+        "quantity": 12,
+        "categories": [
+            "florp"
+        ],
+        "price": 24
     }
 ]
