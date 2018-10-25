@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ajax Blog</title>
+</head>
+<body>
+
+<div id="posts"></div>
+<button> Refresh </button>
+
+
+<!--JS-->
+<script src="js/jquery-2.x-git.js"></script>
+<script>
+
+    //updates the data
+    function update (){
+        var posts = $.ajax("data/blog.json", { //gets data
+           "type": "GET"
+        })
+
+        posts.done(function (data) { //calls the function that builds the html
+            $("#posts").html(buildHTML(data));
+        })
+
+        posts.fail(function (){
+            alert("ERROR");
+        })
+    }
+
+    //building html....
+    function buildHTML (data){
+        var html = '';
+        data.forEach(function (item) {
+            html += "<div>";
+            html += "<h1>" + item.title + "</h1>";
+            html += "<p>" + item.content + "</p>";
+            html += "<ul>";
+            item.categories.forEach(function (category){
+             html += "<li class='tag'>" + category + "</li>";
+            })
+            html += "</ul>";
+            html += "<h6>" + item.date + "</h6>";
+            html += "</div>";
+        })
+        return html;
+    }
+
+    update();
+    $("button").on('click', function (e) {
+        update();
+    })
+
+
+
+
+
+</script>
+</body>
+</html>
