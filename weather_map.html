@@ -8,6 +8,14 @@
         body{
             background-color: #00ABA9;
         }
+        .container{
+            width: 65%;
+            display: block;
+            margin: 0 auto;
+            background-color: #5ead93;
+            background-image: url("https://www.transparenttextures.com/patterns/fresh-snow.png");
+            border: 2px solid black;
+        }
         li {
             list-style: none;
             display: inline-block;
@@ -15,6 +23,10 @@
         }
         #mapContainer{
             border: 2px solid black;
+            margin: 0 auto;
+        }
+        #weather{
+            margin: 0 auto;
         }
         .weatherBox{
             background-color: lightblue;
@@ -30,12 +42,15 @@
     <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-mapevents.js"></script>
     <link rel="stylesheet" type="text/css"
           href="http://js.api.here.com/v3/3.0/mapsjs-ui.css" />
+
 </head>
 <body>
 
+<div class="container">
+    <h1 id="city"></h1>
 <div id="weather"></div>
 <div style="width: 640px; height: 480px" id="mapContainer"></div>
-
+</div>
 </body>
 
 <script src="js/jquery-2.x-git.js"></script>
@@ -55,7 +70,8 @@
                 //use lat and lon for latitude and longitude
             }
         }).done(function (data) {
-            // console.log(data);
+            console.log(data);
+            $('#city').html(data.city.name);
             $("#weather").html(getData(data));
         });
     }
