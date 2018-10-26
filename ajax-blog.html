@@ -3,12 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <title>Ajax Blog</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/ajax.css">
 </head>
 <body>
-
+<div class="container">
 <div id="posts"></div>
-<button> Refresh </button>
-
+<button class="btn"> Refresh </button>
+</div>
 
 <!--JS-->
 <script src="js/jquery-2.x-git.js"></script>
@@ -33,15 +35,15 @@
     function buildHTML (data){
         var html = '';
         data.forEach(function (item) {
-            html += "<div>";
-            html += "<h1>" + item.title + "</h1>";
-            html += "<p>" + item.content + "</p>";
+            html += "<div class='card m-1'>";
+            html += "<h1 class='card-title m-1'>" + item.title + "</h1>";
+            html += "<p class='card-text m-2'>" + item.content + "</p>";
             html += "<ul>";
             item.categories.forEach(function (category){
-             html += "<li class='tag'>" + category + "</li>";
+             html += "<li>" + category + " </li>";
             })
             html += "</ul>";
-            html += "<h6>" + item.date + "</h6>";
+            html += "<h6 class='m-2'>" + item.date + "</h6>";
             html += "</div>";
         })
         return html;
