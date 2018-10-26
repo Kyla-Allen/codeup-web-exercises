@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon">
+
+    <title>Weather Map Project</title>
+
+</head>
+<body>
+
+<main class="container">
+
+    <h1>Weather Map Project Lecture</h1>
+
+</main>
+
+<!-- jQuery Version 2.2.4 -->
+<script src="http://code.jquery.com/jquery-2.2.4.min.js"></script>
+
+<!-- Custom JS -->
+<script>
+
+    $(document).ready(function() {
+
+        "use strict";
+
+
+        // APPID: 7f8e3aa0aad113510e0c1eaafd1c17b8
+
+        // location id for SA: 4726206
+
+        // weather api url: http://api.openweathermap.org/data/2.5/forecast
+
+        /**
+         * author Justin Reich
+         * getMinMaxDayTemp returns the minimum and maximum temp for a given day based on the response of a query to the OpenWeatherMap 5-Day Hourly Forecast API
+         * @param data - the response object from the OpenWeatherMap 5-Day Hourly Forecast API
+         * @param day - a number (1-5) representing which day in the next five days to get the min and max temp for;l
+         * @returns {{min: T, max: T}}
+         */
+        const getMinMaxDayTemp = (data, day) => {
+            const temps = data.list.slice(day * 8 - 8, day * 8)
+                .reduce((prev, curr) => {
+                    prev.push(curr.main.temp);
+                    return prev;
+                }, []).sort();
+            return {min: temps.shift(), max: temps.pop()};
+        };
+
+        $.get("http://api.openweathermap.org/data/2.5/forecast", {
+            APPID: "7f8e3aa0aad113510e0c1eaafd1c17b8",
+            id: 4726206,
+            units: "imperial"
+        }).done(function(data) {
+            console.log(getMinMaxDayTemp(data, 1));
+        });
+
+
+        // alternative way of writing GET request
+        // $.get({
+        //     url: "http://api.openweathermap.org/data/2.5/forecast",
+        //     data: {
+        //         APPID: "7f8e3aa0aad113510e0c1eaafd1c17b8",
+        //         q: "San Antonio, US"
+        //     }
+        // }).done(function(data) {
+        //     console.log(data);
+        // });
+
+    });
+
+</script>
+
+</body>
+</html>
