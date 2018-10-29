@@ -21,6 +21,9 @@
             display: inline-block;
             margin: 0 20px;
         }
+        form{
+            margin: 2em;
+        }
         #mapContainer{
             border: 2px solid black;
             margin: 0 auto;
@@ -79,6 +82,41 @@
             $('#city').html(data.city.name);
             $("#weather").html(getData(data));
         });
+    }
+
+    //getting the data and call the buildDiv function
+    function getData(data){
+        var html = '<ul>';
+        for (var i = 0; i < 24; i += 8) {//we're only going up three days, so we're less than 25
+            html+= '<li>';
+            html += buildDiv (data.list[i].main.temp,
+                data.list[i].main.temp_min,
+                data.list[i].main.temp_max,
+                data.list[i].weather[0].description,
+                data.list[i].main.humidity,
+                data.list[i].wind.speed,
+                data.list[i].main.pressure,
+                // data.list[i].weather[0].icon
+            );
+            html+= '</li>';
+        }
+        html += '</ul>';
+        return html;
+    }
+
+    //building the divs...
+    function buildDiv(temp, temp_min, temp_max, desc, humid, wind, pressure, image){
+        var html =  ' ';
+        html += '<div class="weatherBox">';
+        html += '<h2>' + temp + ' degrees </h2>';
+        html += '<h3> Min/Max: ' + temp_min + '/' + temp_max + '</h3>';
+        html += '<p> Weather: '+ desc + '</p>';
+        // html += '<img src="'+ image + '">';
+        html += '<p> Humidity: ' + humid + '</p>';
+        html += '<p> Wind Speed: ' + wind + '</p>';
+        html += '<p> Pressure: ' + pressure + '</p>';
+        html += '</div>';
+        return html;
     }
 
     ////////////////////////////////////////////////////////////////////////////////////////////////
@@ -162,12 +200,16 @@
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////
     //=---------------SEARCH--------------//
 
-    $.get({
-        url: "data/countries.json",
-    }).done(function (data) {
-        $("#country_search").html(buildSelect(data));
-    })
+    function buildSelect(data){
+        var html = '';
+        for (var i = 0; i < data.length; i++) {
+            html += "<option>";
+            html += data[i].name;
+            html += "</option>";
 
+        }
+        return html;
+    }
 
     function updateMapbySearch (name) {
         $.get({
@@ -193,62 +235,18 @@
         map.setCenter({lat: lat, lng: lng});
     }
 
+    $.get({
+        url: "data/countries.json",
+    }).done(function (data) {
+        $("#country_search").html(buildSelect(data));
+    })
 
+    //when button is clicked, update the map based on the search input
     $('button').on('click', function (e) {
         e.preventDefault();
-        var search = $('#city_search').val() + ',' + $("#country_search").val();
+        var search = $('#city_search').val() + ',' + $("#country_search").val().code;
         updateMapbySearch(search);
     });
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-    //getting the data and call the buildDiv function
-    function getData(data){
-        var html = '<ul>';
-        for (var i = 0; i < 24; i += 8) {//we're only going up three days, so we're less than 25
-            html+= '<li>';
-            html += buildDiv (data.list[i].main.temp,
-                data.list[i].main.temp_min,
-                data.list[i].main.temp_max,
-                data.list[i].weather[0].description,
-                data.list[i].main.humidity,
-                data.list[i].wind.speed,
-                data.list[i].main.pressure,
-                // data.list[i].weather[0].icon
-                );
-            html+= '</li>';
-        }
-        html += '</ul>';
-        return html;
-    }
-
-    //building the divs...
-    function buildDiv(temp, temp_min, temp_max, desc, humid, wind, pressure, image){
-        var html =  ' ';
-        html += '<div class="weatherBox">';
-        html += '<h2>' + temp + ' degrees </h2>';
-        html += '<h3> Min/Max: ' + temp_min + '/' + temp_max + '</h3>';
-        html += '<p> Weather: '+ desc + '</p>';
-        // html += '<img src="'+ image + '">';
-        html += '<p> Humidity: ' + humid + '</p>';
-        html += '<p> Wind Speed: ' + wind + '</p>';
-        html += '<p> Pressure: ' + pressure + '</p>';
-        html += '</div>';
-        return html;
-    }
-
-    function buildSelect(data){
-        var html = '';
-        for (var i = 0; i < data.length; i++) {
-            html += "<option>";
-            html += data[i].code;
-            html += "</option>";
-
-        }
-        return html;
-    }
-
-
 
 </script>
 </html>
