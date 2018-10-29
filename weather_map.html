@@ -45,11 +45,15 @@
 
 </head>
 <body>
-
 <div class="container">
-    <h1 id="city"></h1>
-<div id="weather"></div>
-<div style="width: 640px; height: 480px" id="mapContainer"></div>
+    <h1 id="city">Select a Location</h1>
+    <div id="weather"></div>
+    <form>
+        <input type="text" id="city_search" placeholder="Search for a City" name="city_search">
+        <input type="text" id="country_search" placeholder="country" name="country_search">
+        <button> Search </button>
+    </form>
+    <div style="width: 640px; height: 480px" id="mapContainer"></div>
 </div>
 </body>
 
@@ -67,7 +71,6 @@
                 lat: lat,
                 lon: long,
                 units: "imperial"
-                //use lat and lon for latitude and longitude
             }
         }).done(function (data) {
             console.log(data);
@@ -76,7 +79,7 @@
         });
     }
 
-
+    ////////////////////////////////////////////////////////////////////////////////////////////////
 
     //MAP STUFF//
 
@@ -100,12 +103,13 @@
             center: { lat: 29.426567, lng: -98.4936 }
         });
 
-    function addDraggableMarker(map, behavior){
+    //add the marker
+    var marker = new H.map.Marker({ lat: 29.426567, lng: -98.4936 });
+    // Ensure that the marker can receive drag events
+    marker.draggable = true;
+    map.addObject(marker);
 
-        var marker = new H.map.Marker({ lat: 29.426567, lng: -98.4936 });
-        // Ensure that the marker can receive drag events
-        marker.draggable = true;
-        map.addObject(marker);
+    function DraggableMarker(map, behavior){
 
         // disable the default draggability of the underlying map
         // when starting to drag a marker object:
@@ -151,7 +155,40 @@
     var ui = H.ui.UI.createDefault(map, defaultLayers, 'en-US');
 
     // Add the click event listener.
-    addDraggableMarker(map, behavior);
+    DraggableMarker(map, behavior);
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    //=---------------SEARCH--------------//
+    function updateMapbySearch (name) {
+        $.get({
+            url: "http://api.openweathermap.org/data/2.5/forecast",
+            data: {
+                APPID: "1e83d08506f0696e00686ca86e685d93",
+                q: name,
+                units: "imperial"
+            }
+        }).done(function (data) {
+            searchMarker(data.city.coord.lat, data.city.coord.lon);
+            $('#city').html(data.city.name);
+            $("#weather").html(getData(data));
+
+        });
+    }
+
+    function searchMarker (lat, lng) {
+        //move Marker
+        marker.setPosition({lat: lat, lng: lng});
+
+        //move map
+        map.setCenter({lat: lat, lng: lng});
+    }
+
+
+    $('button').on('click', function (e) {
+        e.preventDefault();
+        var search = $('#city_search').val() + ',' + $("#country_search").val();
+        updateMapbySearch(search);
+    });
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -160,8 +197,15 @@
         var html = '<ul>';
         for (var i = 0; i < 24; i += 8) {//we're only going up three days, so we're less than 25
             html+= '<li>';
-            html += buildDiv (data.list[i].main.temp, data.list[i].weather[0].description, data.list[i].main.humidity
-                ,data.list[i].wind.speed, data.list[i].main.pressure); //damn this function call is long. Try and refactor this later
+            html += buildDiv (data.list[i].main.temp,
+                data.list[i].main.temp_min,
+                data.list[i].main.temp_max,
+                data.list[i].weather[0].description,
+                data.list[i].main.humidity,
+                data.list[i].wind.speed,
+                data.list[i].main.pressure,
+                // data.list[i].weather[0].icon
+                );
             html+= '</li>';
         }
         html += '</ul>';
@@ -169,11 +213,13 @@
     }
 
     //building the divs...
-    function buildDiv(temp, desc, humid, wind, pressure){
+    function buildDiv(temp, temp_min, temp_max, desc, humid, wind, pressure, image){
         var html =  ' ';
         html += '<div class="weatherBox">';
         html += '<h2>' + temp + ' degrees </h2>';
-        html += '<p> Current Weather: '+ desc + '</p>';
+        html += '<h3> Min/Max: ' + temp_min + '/' + temp_max + '</h3>';
+        html += '<p> Weather: '+ desc + '</p>';
+        // html += '<img src="'+ image + '">';
         html += '<p> Humidity: ' + humid + '</p>';
         html += '<p> Wind Speed: ' + wind + '</p>';
         html += '<p> Pressure: ' + pressure + '</p>';
