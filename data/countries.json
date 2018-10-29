@@ -1,15 +1,16 @@
 [
   {
     "name": "United States",
-    "code": "USA"
+    "code": "US"
   },
   {
     "name": "Japan",
     "code": "JPN"
+  },
+  {
+    "name": "France",
+    "code": "FRA"
   }
-
-
-
 
 
 ]

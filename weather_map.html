@@ -9,12 +9,17 @@
             background-color: #00ABA9;
         }
         .container{
-            width: 65%;
+            width: 80%;
             display: block;
             margin: 0 auto;
             background-color: #5ead93;
             background-image: url("https://www.transparenttextures.com/patterns/fresh-snow.png");
             border: 2px solid black;
+            text-align: center;
+        }
+        h1{
+            text-align: center;
+            font-family: "Lantinghei TC";
         }
         li {
             list-style: none;
@@ -22,7 +27,15 @@
             margin: 0 20px;
         }
         form{
+            text-align: center;
             margin: 2em;
+        }
+        input, select, button {
+            font-size: 20px;
+            margin: 0.2em;
+        }
+        button:hover{
+            background-color: #00ABA9;
         }
         #mapContainer{
             border: 2px solid black;
@@ -35,7 +48,6 @@
             background-color: lightblue;
             border: 1px solid black;
             padding: 10px;
-            color: black;
         }
     </style>
     <meta name="viewport" content="initial-scale=1.0, width=device-width" />
@@ -53,9 +65,7 @@
     <div id="weather"></div>
     <form>
         <input type="text" id="city_search" placeholder="Search for a City" name="city_search">
-        <select id="country_search">
-
-        </select>
+        <select id="country_search"></select>
         <button> Search </button>
     </form>
     <div style="width: 640px; height: 480px" id="mapContainer"></div>
@@ -78,7 +88,6 @@
                 units: "imperial"
             }
         }).done(function (data) {
-            console.log(data);
             $('#city').html(data.city.name);
             $("#weather").html(getData(data));
         });
@@ -205,6 +214,8 @@
         for (var i = 0; i < data.length; i++) {
             html += "<option>";
             html += data[i].name;
+            html += ",";
+            html += data[i].code;
             html += "</option>";
 
         }
@@ -239,12 +250,14 @@
         url: "data/countries.json",
     }).done(function (data) {
         $("#country_search").html(buildSelect(data));
-    })
+    });
 
     //when button is clicked, update the map based on the search input
     $('button').on('click', function (e) {
         e.preventDefault();
-        var search = $('#city_search').val() + ',' + $("#country_search").val().code;
+        var countryCode = $("#country_search").val(); //grab the country from the selection
+        countryCode = countryCode.split(","); //split it by comma to isolate the code
+        var search = $('#city_search').val() + ',' + countryCode[1]; //join the code to the search
         updateMapbySearch(search);
     });
 
