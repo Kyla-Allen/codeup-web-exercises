@@ -50,7 +50,9 @@
     <div id="weather"></div>
     <form>
         <input type="text" id="city_search" placeholder="Search for a City" name="city_search">
-        <input type="text" id="country_search" placeholder="country" name="country_search">
+        <select id="country_search">
+
+        </select>
         <button> Search </button>
     </form>
     <div style="width: 640px; height: 480px" id="mapContainer"></div>
@@ -159,6 +161,14 @@
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////
     //=---------------SEARCH--------------//
+
+    $.get({
+        url: "data/countries.json",
+    }).done(function (data) {
+        $("#country_search").html(buildSelect(data));
+    })
+
+
     function updateMapbySearch (name) {
         $.get({
             url: "http://api.openweathermap.org/data/2.5/forecast",
@@ -227,6 +237,16 @@
         return html;
     }
 
+    function buildSelect(data){
+        var html = '';
+        for (var i = 0; i < data.length; i++) {
+            html += "<option>";
+            html += data[i].code;
+            html += "</option>";
+
+        }
+        return html;
+    }
 
 
 
