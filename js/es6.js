@@ -49,9 +49,9 @@ let names = [];
 
 
 
-users.forEach(user => emails.push(user.email));
+users.forEach((user) => emails.push(user.email));
 
-users.forEach(user => names.push(user.name));
+users.forEach((user) => names.push(user.name));
 
 
 
