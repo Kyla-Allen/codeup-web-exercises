@@ -33,6 +33,8 @@
 // dog.color = "brown";
 //
 // console.log(dog);
+
+
 // template strings
 // "You had me at 'meat tornado'" - Ron Swanson
 // let firstName = "Ron";
@@ -56,6 +58,7 @@
 // `;
 //
 // console.log(itemsHtml);
+
 // for ..of loop (works on node lists!!!)
 // const numbers = ['one', 'two', 'three'];
 //
@@ -64,6 +67,11 @@
 // for (let number of numbers) {
 //     console.log(number);
 // }
+
+
+
+
+
 // arrow functions
 // function returnTwo() {
 //     return 2;
@@ -123,6 +131,11 @@
 // console.log(addArgsC());
 // console.log(addArgsC(1));
 // console.log(addArgsC(3, 3));
+
+
+
+
+
 // object property variable assignment shorthand
 // let breed = "Pug";
 // let age = 3;
@@ -143,6 +156,9 @@
 //    isCute
 // };
 // console.log(dog.breed);
+
+
+
 // object destructuring
 let puppy = {
     breed: "Lab",
@@ -175,6 +191,8 @@ let puppy = {
 // console.log(cat1);
 // console.log(cat2);
 // console.log(cat3);
+
+
 // using with functions
 // var getArea = function (shapeObject) {
 //     return shapeObject.height * shapeObject.width;
