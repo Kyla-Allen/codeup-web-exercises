@@ -23,7 +23,10 @@ const getCommit = (user) =>  {
     let request = fetch(`https://api.github.com/users/${user}/events`, {headers: {'Authorization': '8b1b24c4a67f44f2087204711583d14a99114fca'}});
     request
         .then( (response) => response.json())
-        .then(data => { data.filter
+        .then(data => {
+            console.log(data);
+            let commits = data.filter(data => data.type === "CommitType");
+            console.log(commits);
             // document.getElementById("data").innerHTML = displayData(data[0].created_at);
         });
 };
