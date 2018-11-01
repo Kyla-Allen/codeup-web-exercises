@@ -24,10 +24,8 @@ const getCommit = (user) =>  {
     request
         .then( (response) => response.json())
         .then(data => {
-            console.log(data);
-            let commits = data.filter(data => data.type === "CommitType");
-            console.log(commits);
-            // document.getElementById("data").innerHTML = displayData(data[0].created_at);
+            let commits = data.filter(data => data.type === "PushEvent");
+            document.getElementById("data").innerHTML = displayData(data[0].created_at);
         });
 };
 
